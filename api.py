@@ -2,11 +2,11 @@ from flask import Flask
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app)
+CORS(app)  # This enables CORS for all routes
 
-@app.route('/')
-def home():
-    return "DatalysisPro API is running!"
+@app.route("/api/data")
+def get_data():
+    return {"message": "Hello from backend!"}
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+if __name__ == "__main__":
+    app.run()
